@@ -5,16 +5,10 @@ It logs into an Azure AD tenant, obtains a list of all subscriptions attached to
 
 ![alt text](https://github.com/chrisbeckett/azd9-autoonboarding/blob/master/onboard.png "Onboarder screenshot")
 
-What's New? (6th January 2021)
+What's New? (19th August 2021)
 ------------------------------
 
-   - Updated core libraries to latest version, resolving security issue in cryptography library
-   - Changed references from Dome9 to CloudGuard 
-   - Changed environment variables from **D9_API_KEY** and **D9_API_SECRET** to **CG_API_KEY** and **CG_API_SECRET** respectively
-   - Updated code to leverage current authentication library from Azure, removing deprecated method
-   - Improved logging in Azure Function code
-   - Updated standalone Windows executable
-   - New MacOS standalone executable
+   - Added new environment variable to cater for different CloudGuard regions. Please set the CG_REGION environment variable as per the notes in the onboard.py file to match your region.
 
 
 Standalone executable
@@ -40,6 +34,7 @@ To run this script, you will need the following:-
 4) CloudGuard API key with admin permissions to add subscriptions (*https://supportcenter.checkpoint.com/supportcenter/portal?eventSubmit_doGoviewsolutiondetails=&solutionid=sk144514&partition=General&product=CloudGuard*)
     - CloudGuard **API key**
     - CloudGuard **API secret**
+    - CloudGuard region **CG_REGION** (this is between 'secure' and 'dome9.com' in the URL you log in to). Eg, secure.eu1.dome9.com, secure.ap3.dome9.com or secure.dome9.com if you running on the default US DC.
     
 5) You will need the **Azure Management Group** construct configured against your Azure AD (see *https://docs.microsoft.com/en-us/azure/governance/management-groups/overview* for further information). This is so that any new subscriptions added against the Azure AD tenant are visible to the onboarding tool. **Adding the Application ID as a Contributor in the IAM Access Control blade in the Tenant Root Group will provide this capability.**
 
