@@ -38,7 +38,7 @@ To run this script, you will need the following:-
     
 5) You will need the **Azure Management Group** construct configured against your Azure AD (see *https://docs.microsoft.com/en-us/azure/governance/management-groups/overview* for further information). This is so that any new subscriptions added against the Azure AD tenant are visible to the onboarding tool. **Adding the Application ID as a Contributor in the IAM Access Control blade in the Tenant Root Group will provide this capability.**
 
-6) Run **git clone https://github.com/chrisbeckett/azd9-autoonboarding.git**
+6) Run **git clone https://github.com/chkp-stuartgreen/azd9-autoonboarding.git**
 
 7) Run **python -m venv azd9-autoonboarding**
 
@@ -71,5 +71,5 @@ Deploying as an Azure Function
 - Run **func azure functionapp publish *functname*** where the functname is your function name from the "**Deploy to Azure**" workflow
 - By default, the function uses a timer trigger set to run at 0600 daily, you may alter this to suit your needs
     
-[![Deploy to Azure](https://azuredeploy.net/deploybutton.png)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fchrisbeckett%2Fazd9-autoonboarding%2Fmaster%2Ftemplate.json)
+[![Deploy to Azure](https://azuredeploy.net/deploybutton.png)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fchkp-stuartgreen%2Fazd9-autoonboarding%2Fmaster%2Ftemplate.json)
 
